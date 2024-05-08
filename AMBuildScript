@@ -629,6 +629,8 @@ if getattr(builder.options, 'scripting_only', False):
     'tools/buildbot/ToolsPackageScript',
   ]
 else:
+  BuildScripts = ['extensions/mysql/AMBuilder']
+  """
   BuildScripts = [
     'loader/AMBuilder',
     'core/AMBuilder',
@@ -656,6 +658,7 @@ else:
       'tools/buildbot/PackageHelpers',
       'tools/buildbot/PackageScript',
     ]
+  """
 
 builder.Build(BuildScripts, { 'SM': SM })
 
