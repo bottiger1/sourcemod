@@ -303,6 +303,8 @@ class SMConfig(object):
             '-Wno-implicit-int-float-conversion',
             '-Wno-tautological-overlap-compare',
         ]
+    if have_clang or (cxx.version >= 'gcc-4.5'):
+        cxx.cxxflags += ['-Wno-reorder']
 
     if have_gcc:
       cxx.cflags += ['-mfpmath=sse']
